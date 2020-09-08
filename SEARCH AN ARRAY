@@ -1,0 +1,38 @@
+#SEARCH FOR AN ELEMENT IN ARRAY USING CALLING FUNCTION
+from numpy import*
+from array import*
+def search_array(n):
+    i=0
+    for j in ar:
+        if j==n:
+            print("searched value  of index: ")
+            print(i)
+            break
+        i=i+1
+    else:
+        print("enter correct elemen :t")
+        
+ar=array('b',[])
+num=int(input("enter length of array: "))
+for b in range (num):
+    l=int(input("enter next value: "))
+    ar.append(l)
+print(ar)
+n= int(input("enter number to search:"))
+search_array(n)
+       
+       OUTPUT:
+       enter length of array: 4
+
+enter next value: 12
+
+enter next value: 14
+
+enter next value: 65
+
+enter next value: 3
+array('b', [12, 14, 65, 3])
+
+enter number to search:14
+searched value  of index: 
+1
