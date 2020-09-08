@@ -1,0 +1,36 @@
+#CONCATENATION OF ARRAY
+from numpy import*
+from array import*
+ar=array('b',[])#storing array
+num=int(input("enter length of array 1: "))
+for b in range (num):
+    l=int(input("enter next value: "))
+    ar.append(l)#appending value to array
+print(ar)
+arr=array('b',[])
+num1=int(input("enter length of array 2: "))
+for b in range (num1):
+    k=int(input("enter next value: "))
+    arr.append(k)#appending value to array
+print(arr)
+print("concatinated array is : ")
+print(concatenate([ar,arr]))
+       
+OUTPUT:
+enter length of array 1:  2
+
+enter next value: 1
+
+enter next value: 2
+array('b', [1, 2])
+
+enter length of array 2: 3
+
+enter next value: 1
+
+enter next value: 2
+
+enter next value: 3
+array('b', [1, 2, 3])
+concatinated array is : 
+[1 2 1 2 3]
