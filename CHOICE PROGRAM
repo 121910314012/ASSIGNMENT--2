@@ -1,0 +1,76 @@
+# TO DISPLAY PROGRAM OF OUR CHOICE
+from array import *
+n=int(input("Enter the your choice : 1. Copy, 2. Remove duplicates, 3. Delete at kth index, 4. Search an item, 5. Display contents "))
+ar1=array('i',[1,2,3,4,4,4])
+# COPYING ELEMENTS FROM ON ARRAY TO ANOTHER
+if (n==1):
+    ar2 = [None] * len(ar1)
+    for i in range(0, len(ar1)):
+        ar2[i] = ar1[i]
+    print("Elements of original array: ")
+    for i in range(0, len(ar1)):
+        print(ar1[i]),
+    print()
+    print("Elements of new array: ")
+    for i in range(0, len(ar2)):
+        print(ar2[i]),
+
+#REMOVING DUPLICATES
+elif n==2:
+    print("The original list is : " + str(ar1))
+    res = []
+    for i in ar1:
+        if i not in res:
+            res.append(i)
+
+        #AFTER REMOVING DUPLICATES
+    print("The list after removing duplicates : " + str(res))
+    
+#TO REMOVE INDEX ELEMENT
+elif n==3:
+    k=int(input("Enter the index of the number to delete :"))
+    del arr1[k]
+    print(*ar1)
+    
+#SEARCH ELEMENT IN ARRAY
+elif n==4:
+    n=int(input("Enter the element to search:"))
+    k = 0
+    for e in ar1:
+        if e == n:
+            print("Index of the value u searched for:")
+            print(k)
+            break
+        k =k+1
+    else:
+        print("Enter correct element:")
+        
+#DISPLAYING THE PROGRAM
+elif n==5:
+    print(" program to be done")
+    print(("1.COPY 2. Remove duplicates 3.Delte at Kth index 4. Search for the item 5.Display contnent"))
+else:
+    print("Enter the value from the choices given :")
+    
+    OUTPPUT:
+    Enter the your choice : 1. Copy, 2. Remove duplicates, 3. Delete at kth index, 4. Search an item, 5. Display contents 1
+Elements of original array: 
+1
+2
+3
+4
+4
+4
+
+Elements of new array: 
+1
+2
+3
+4
+4
+4
+OUTPUT2:
+Enter the your choice : 1. Copy, 2. Remove duplicates, 3. Delete at kth index, 4. Search an item, 5. Display contents  2
+The original list is : array('i', [1, 2, 3, 4, 4, 4])
+The list after removing duplicates : [1, 2, 3, 4]
+    
