@@ -1,7 +1,7 @@
 #SEARCH FOR AN ELEMENT IN ARRAY USING CALLING FUNCTION
 from numpy import*
 from array import*
-def search_array(n):
+def search_array(n):#function searching
     i=0
     for j in ar:
         if j==n:
@@ -10,16 +10,16 @@ def search_array(n):
             break
         i=i+1
     else:
-        print("enter correct elemen :t")
+        print("enter correct element :")
         
-ar=array('b',[])
+ar=array('b',[])#storing the array
 num=int(input("enter length of array: "))
 for b in range (num):
     l=int(input("enter next value: "))
-    ar.append(l)
+    ar.append(l)#appending array
 print(ar)
 n= int(input("enter number to search:"))
-search_array(n)
+search_array(n)#calling function
        
        OUTPUT:
        enter length of array: 4
