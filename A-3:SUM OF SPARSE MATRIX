@@ -1,0 +1,106 @@
+#Sum of two sparse matrix
+
+Matrix1 = [[1, 0, 0, 0],
+                [0, 2, 0, 0],
+                [0, 20, 3, 0],
+                [0, 0, 4, 4],
+                [5, 0, 0, 0]]
+Matrix2 = [[1, 0, 0, 0],
+                [0, 2, 0, 0],
+                [0, 2, 3, 0],
+                [0, 0, 4, 4],
+                [5, 0, 0, 0]]
+print(" Matrix1")
+for row in Matrix1:
+    for element in row:
+        print(element, end=" ")
+    print()
+print(" Matrix2")
+for row in Matrix2:
+    for element in row:
+        print(element, end=" ")
+    print()
+
+sparseMatrix=[]
+#searching values greater than zero
+for i in range(len(Matrix1)):
+    for j in range(len(Matrix1[0])):
+        if Matrix1[i][j] != 0:
+
+            temp = []
+            temp.append(i)
+            temp.append(j)
+            temp.append(Matrix1[i][j])
+            sparseMatrix.append(temp)
+
+sparseMatrix2=[]
+#searching values greater than zero
+for i in range(len(Matrix1)):
+    for j in range(len(Matrix1[0])):
+        if Matrix2[i][j] != 0:
+
+            temp = []
+            temp.append(i)
+            temp.append(j)
+            temp.append(Matrix1[i][j])
+            sparseMatrix2.append(temp)
+# displaying sparse matrix
+print("\nSparse Matrix1: ")
+for row in sparseMatrix:
+    for element in row:
+        print(element, end=" ")
+    print()
+print("\nSparse Matrix2: ")
+for row in sparseMatrix2:
+    for element in row:
+        print(element, end=" ")
+    print()
+print("Sum of sparse matrix")
+result = [[0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0]]
+for i in range(len(sparseMatrix)):
+    # iterate through columns
+    for j in range(len(sparseMatrix[0])):
+        result[i][j] = sparseMatrix[i][j] + sparseMatrix2[i][j]
+print(result)
+
+
+OUTPUT:
+
+ Matrix1
+1 0 0 0 
+0 2 0 0 
+0 20 3 0 
+0 0 4 4 
+5 0 0 0 
+ Matrix2
+1 0 0 0 
+0 2 0 0 
+0 2 3 0 
+0 0 4 4 
+5 0 0 0 
+
+Sparse Matrix1: 
+0 0 1 
+1 1 2 
+2 1 20 
+2 2 3 
+3 2 4 
+3 3 4 
+4 0 5 
+
+Sparse Matrix2: 
+0 0 1 
+1 1 2 
+2 1 20 
+2 2 3 
+3 2 4 
+3 3 4 
+4 0 5 
+Sum of sparse matrix
+[[0, 0, 2], [2, 2, 4], [4, 2, 40], [4, 4, 6], [6, 4, 8], [6, 6, 8], [8, 0, 10]]
