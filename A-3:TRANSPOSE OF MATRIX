@@ -1,0 +1,58 @@
+# Transpose of Matrix
+Matrix = [[5, 0, 0],
+                [0, 2, 0],
+                [0, 9, 0],
+                ]
+for row in Matrix:
+    for element in row:
+        print(element, end=" ")
+    print()
+
+sparseMatrix=[]
+#searching for values grater than zero
+for i in range(len(Matrix)):
+    for j in range(len(Matrix[0])):
+        if Matrix[i][j] != 0:
+
+            temp = []
+            temp.append(i)
+            temp.append(j)
+            temp.append(Matrix[i][j])
+            sparseMatrix.append(temp)
+
+
+print("\nSparse Matrix: ")
+for row in sparseMatrix:
+    for element in row:
+        print(element, end=" ")
+    print()
+
+B = [[0,0,0],
+     [0,0,0],
+     [0,0,0],
+     [0,0,0],
+     [0,0,0],
+     [0,0,0],
+     [0,0,0]]
+for i in range(3):
+        for j in range (3):
+            B[i][j] =sparseMatrix[j][i]
+print("Result  ofmatrix is:")
+for i in range(3):
+    for j in range(3):
+        print(B[i][j], " ", end='')
+    print()
+    
+    OUTPUT:
+    5 0 0 
+0 2 0 
+0 9 0 
+
+Sparse Matrix: 
+0 0 5 
+1 1 2 
+2 1 9 
+Result  ofmatrix is:
+0  1  2  
+0  1  1  
+5  2  9  
