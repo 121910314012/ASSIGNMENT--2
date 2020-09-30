@@ -1,0 +1,75 @@
+#BINARY SEARCH TEST CASES
+pos=-1
+
+def search(list,n):
+
+    l=0
+    u=len(list)-1
+    while l<=u:
+        mid=(l+u)//2
+
+        if list[mid]==n:
+            globals()['pos']=mid
+            return True
+        else:
+            if list[mid]<n:
+                l=mid+1
+            else:
+                u=mid-1
+    return False
+
+list=[]
+j=int(input("enter number of elements:"))
+
+for i in range(0,j):
+    ele=int(input("enter the numbers in list:"))
+    list.append((ele))
+n=int(input("enter the number to search:"))
+
+if search(list,n):
+    print("found at:",pos+1)
+else:
+    print("not found:")
+    
+    OUTPUT:
+    #TEST CASE1
+    enter number of elements:4
+
+enter the numbers in list:45
+
+enter the numbers in list:56
+
+enter the numbers in list:78
+
+enter the numbers in list:6395
+
+enter the number to search:5648
+not found:
+#TESTCASE2
+enter number of elements:5
+
+enter the numbers in list:2589
+
+enter the numbers in list:3159
+
+enter the numbers in list:29426
+
+enter the numbers in list:546598
+
+enter the numbers in list:2589
+
+enter the number to search:2589
+found at: 1
+#TESTCASE3
+enter number of elements:4
+
+enter the numbers in list:-564
+
+enter the numbers in list:-8596
+
+enter the numbers in list:-45239
+
+enter the numbers in list:-89631
+
+enter the number to search:-8596
+found at: 2
