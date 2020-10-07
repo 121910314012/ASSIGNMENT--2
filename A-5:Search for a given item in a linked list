@@ -1,0 +1,49 @@
+#Search for a given item in a linked list
+class Node:
+
+    # Function to initialise the node object
+    def __init__(self, data):
+        self.data = data
+        self.next = None  
+
+
+# Linked List class
+class LinkedList:
+    def __init__(self):
+        self.head =None
+
+    # insert a new node at the beginning of the linked list
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+    def search(self, x):
+        current = self.head
+        # loop till current not equal to None
+        while current != None:
+            if current.data == x:
+                return True  # data found
+
+            current = current.next
+
+        return False 
+
+
+# Code execution starts here
+if __name__ == '__main__':
+
+    # Start with the empty list
+    llist = LinkedList()
+
+    llist.push(45)
+    llist.push(25)
+    llist.push(55)
+    llist.push(65)
+    llist.push(75)
+
+    if llist.search(95):
+        print("YES")
+    else:
+        print("NO")
+OUTPUT:
+NO
